@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<!-- JDBC驅動程式 -->
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<!-- JDBC URL -->
+		<property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=TEST;</property>
+		<!-- 資料庫使用者 -->
+		<property name="connection.username">test</property>
+		<!-- 資料庫密碼 -->
+		<property name="connection.password">password</property>
+		<!-- 顯示實際操作資料庫時的SQL -->
+		<property name="show_sql">true</property>
+		<!-- 將顯示的SQL排版，方便觀看 -->
+		<property name="format_sql">true</property>
+		<!-- SQL方言，這邊設定的是MySQL -->
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- 以下設置物件與資料庫表格映射文件 -->
+		<mapping class="vo.MyStock" />
+	</session-factory>
+</hibernate-configuration>
